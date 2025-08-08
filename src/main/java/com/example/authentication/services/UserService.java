@@ -58,7 +58,6 @@ public class UserService implements UserDetailsService {
 
         User newUser = convertor.convertToUser(dto);
         newUser.setId(0);
-        System.out.println(newUser);
         newUser.setPassword(passwordEncoder.encode(dto.getPassword()));
         userRepository.save(newUser); // Теперь сохранится новый объект
 

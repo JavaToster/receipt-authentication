@@ -1,6 +1,7 @@
 package com.example.authentication.filters;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.example.authentication.security.JwtUtil;
 import com.example.authentication.services.UserService;
 import jakarta.persistence.EntityNotFoundException;
@@ -57,7 +58,11 @@ public class JwtFilter extends OncePerRequestFilter {
             SecurityContextHolder.getContext().setAuthentication(authToken);
             filterChain.doFilter(request, response);
 
-        } catch (JWTVerificationException ex) {
+        }catch(TokenExpiredException exc){
+            logger.error("JWT verification failed", exc);
+            sendError(response, HttpServletResponse.SC_BAD_REQUEST, "Invalid JWT token");
+        }
+        catch (JWTVerificationException ex) {
             logger.error("JWT verification failed", ex);
             sendError(response, HttpServletResponse.SC_BAD_REQUEST, "Invalid JWT Token");
 
