@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 /src/main/java/com/example/authentication/TestClass.java
-/src/main/resources/application.yml
+/.env
