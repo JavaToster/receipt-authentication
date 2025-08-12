@@ -2,11 +2,11 @@ package com.example.authentication.utilServices;
 
 import com.example.authentication.DTO.auth.AuthenticationDataDTO;
 import com.example.authentication.model.User;
+import com.example.authentication.util.services.Convertor;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 

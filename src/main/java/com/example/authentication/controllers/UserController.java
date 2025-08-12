@@ -6,10 +6,9 @@ import com.example.authentication.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -21,6 +20,13 @@ public class UserController {
     public ResponseEntity<UserDTO> get(@PathVariable("telegramId") long telegramId){
         UserDTO userDTO = userService.findByTelegramId(telegramId);
 
-        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        return ResponseEntity.ok(userDTO);
+    }
+
+    @GetMapping("/get/several")
+    public ResponseEntity<List<UserDTO>> get(@RequestParam List<Long> ids){
+        List<UserDTO> users = userService.getSeveral(ids);
+
+        return ResponseEntity.ok(users);
     }
 }

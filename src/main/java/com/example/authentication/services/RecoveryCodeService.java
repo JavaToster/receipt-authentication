@@ -3,14 +3,12 @@ package com.example.authentication.services;
 import com.example.authentication.DTO.auth.RecoveryCodeDTO;
 import com.example.authentication.forExceptions.exceptions.AuthenticationException;
 import com.example.authentication.repositories.RedisCacheRepository;
-import com.example.authentication.utilModels.RecoveryCodeEntry;
-import com.example.authentication.utilServices.RecoveryCodesGenerator;
-import jakarta.persistence.EntityNotFoundException;
+import com.example.authentication.util.models.RecoveryCodeEntry;
+import com.example.authentication.util.services.RecoveryCodesGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 @Component
 @RequiredArgsConstructor

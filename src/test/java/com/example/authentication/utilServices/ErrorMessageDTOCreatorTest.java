@@ -1,16 +1,15 @@
 package com.example.authentication.utilServices;
 
 import com.example.authentication.DTO.auth.AuthenticationDataDTO;
+import com.example.authentication.util.services.ErrorMessageCreator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class ErrorMessageDTOCreatorTest {

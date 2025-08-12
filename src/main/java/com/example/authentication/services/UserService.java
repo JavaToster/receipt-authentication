@@ -7,7 +7,7 @@ import com.example.authentication.forExceptions.exceptions.AuthenticationExcepti
 import com.example.authentication.model.User;
 import com.example.authentication.repositories.UserRepository;
 import com.example.authentication.security.JwtUtil;
-import com.example.authentication.utilServices.Convertor;
+import com.example.authentication.util.services.Convertor;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,6 +16,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -87,5 +89,11 @@ public class UserService implements UserDetailsService {
         user.setPassword(passwordEncoder.encode(data.getPassword()));
         user.setTelegramId(data.getTelegramId());
         userRepository.save(user);
+    }
+
+    public List<UserDTO> getSeveral(List<Long> ids) {
+        List<User> users = userRepository.findByTelegramIdIn(ids);
+
+        return users.stream().map(convertor::convertToUserDTO).toList();
     }
 }

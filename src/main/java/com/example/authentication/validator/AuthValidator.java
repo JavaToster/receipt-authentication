@@ -2,7 +2,7 @@ package com.example.authentication.validator;
 
 
 import com.example.authentication.DTO.auth.AuthenticationDataDTO;
-import com.example.authentication.utilServices.ErrorMessageCreator;
+import com.example.authentication.util.services.ErrorMessageCreator;
 import jakarta.validation.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

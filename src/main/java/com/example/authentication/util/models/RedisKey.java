@@ -1,4 +1,4 @@
-package com.example.authentication.utilModels;
+package com.example.authentication.util.models;
 
 public enum RedisKey {
     RECOVERY_CODE("recovery_code:%d");

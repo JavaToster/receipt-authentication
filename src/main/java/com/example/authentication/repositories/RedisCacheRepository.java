@@ -1,7 +1,7 @@
 package com.example.authentication.repositories;
 
-import com.example.authentication.utilModels.RecoveryCodeEntry;
-import com.example.authentication.utilModels.RedisKey;
+import com.example.authentication.util.models.RecoveryCodeEntry;
+import com.example.authentication.util.models.RedisKey;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;

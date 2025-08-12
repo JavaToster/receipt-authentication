@@ -1,12 +1,10 @@
 package com.example.authentication.utilServices;
 
-import jakarta.inject.Inject;
+import com.example.authentication.util.services.RecoveryCodesGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.jupiter.api.Assertions.*;
 

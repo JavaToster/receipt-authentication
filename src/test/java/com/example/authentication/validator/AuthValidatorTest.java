@@ -1,6 +1,6 @@
 package com.example.authentication.validator;
 
-import com.example.authentication.utilServices.ErrorMessageCreator;
+import com.example.authentication.util.services.ErrorMessageCreator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

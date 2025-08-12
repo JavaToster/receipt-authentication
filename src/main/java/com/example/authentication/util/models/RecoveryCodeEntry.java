@@ -1,9 +1,7 @@
-package com.example.authentication.utilModels;
+package com.example.authentication.util.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.Instant;
 
 @Data
 @NoArgsConstructor

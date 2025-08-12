@@ -1,4 +1,4 @@
-package com.example.authentication.utilServices;
+package com.example.authentication.util.services;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

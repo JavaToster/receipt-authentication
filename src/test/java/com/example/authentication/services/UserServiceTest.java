@@ -5,7 +5,7 @@ import com.example.authentication.forExceptions.exceptions.AuthenticationExcepti
 import com.example.authentication.model.User;
 import com.example.authentication.repositories.UserRepository;
 import com.example.authentication.security.JwtUtil;
-import com.example.authentication.utilServices.Convertor;
+import com.example.authentication.util.services.Convertor;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
