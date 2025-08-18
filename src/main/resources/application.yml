@@ -30,4 +30,4 @@ clients:
   header:
     key: ${CLIENTS_HEADER_KEY}
   email-sender:
-    url: ${CLIENTS_EMAIL-SENDER_URL}
+    url: ${CLIENTS_EMAIL_SENDER_URL}
