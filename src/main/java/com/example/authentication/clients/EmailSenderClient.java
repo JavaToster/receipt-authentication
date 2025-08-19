@@ -1,7 +1,8 @@
 package com.example.authentication.clients;
 
 import com.example.authentication.DTO.auth.RecoveryCodeForEmailSenderDTO;
-import com.example.authentication.config.FeignConfiguration;
+import com.example.authentication.config.feign.FeignConfiguration;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

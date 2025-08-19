@@ -1,9 +1,11 @@
-package com.example.authentication.config;
+package com.example.authentication.config.feign;
 
 import feign.codec.ErrorDecoder;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.example.authentication.config.feign.FeignErrorDecoder;
 
 @Configuration
 @EnableFeignClients(basePackages = "com.example.authentication.clients")

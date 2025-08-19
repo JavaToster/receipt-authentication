@@ -1,4 +1,4 @@
-package com.example.authentication.config;
+package com.example.authentication.config.security;
 
 import com.example.authentication.filters.JwtFilter;
 import com.example.authentication.filters.RecoveryCodesFilter;

@@ -1,4 +1,4 @@
-package com.example.authentication.config;
+package com.example.authentication.config.general;
 
 import feign.codec.ErrorDecoder;
 import org.modelmapper.ModelMapper;

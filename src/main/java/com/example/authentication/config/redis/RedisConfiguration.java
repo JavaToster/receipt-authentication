@@ -1,4 +1,4 @@
-package com.example.authentication.config;
+package com.example.authentication.config.redis;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.EnableCaching;
