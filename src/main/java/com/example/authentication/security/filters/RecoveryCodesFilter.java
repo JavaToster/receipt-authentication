@@ -1,4 +1,4 @@
-package com.example.authentication.filters;
+package com.example.authentication.security.filters;
 
 import com.example.authentication.repositories.RedisCacheRepository;
 import jakarta.servlet.FilterChain;

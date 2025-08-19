@@ -1,7 +1,5 @@
 package com.example.authentication.config.security;
 
-import com.example.authentication.filters.JwtFilter;
-import com.example.authentication.filters.RecoveryCodesFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -15,6 +13,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.example.authentication.security.JWT.JwtFilter;
+import com.example.authentication.security.filters.RecoveryCodesFilter;
 
 @EnableWebSecurity
 @Configuration
@@ -31,15 +32,9 @@ public class SecurityConfiguration {
         http
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/error", "/auth/*").permitAll()
-                        .anyRequest().authenticated());
-
-        http
-                .csrf(AbstractHttpConfigurer::disable);
-
-        http
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-
-        http
+                        .anyRequest().authenticated())
+                .csrf(AbstractHttpConfigurer::disable)
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

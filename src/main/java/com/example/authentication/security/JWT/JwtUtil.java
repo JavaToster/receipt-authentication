@@ -1,4 +1,4 @@
-package com.example.authentication.security;
+package com.example.authentication.security.JWT;
 
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;

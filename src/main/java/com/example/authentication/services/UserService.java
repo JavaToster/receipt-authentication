@@ -6,7 +6,7 @@ import com.example.authentication.DTO.user.UserDTO;
 import com.example.authentication.forExceptions.exceptions.AuthenticationException;
 import com.example.authentication.model.User;
 import com.example.authentication.repositories.UserRepository;
-import com.example.authentication.security.JwtUtil;
+import com.example.authentication.security.JWT.JwtUtil;
 import com.example.authentication.util.services.Convertor;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -41,11 +41,11 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByTelegramId(long id){
         User user = userRepository.findByTelegramId(id).orElseThrow(() -> new EntityNotFoundException("User not found"));
 
-        return new com.example.authentication.security.UserDetails(user);
+        return new com.example.authentication.security.user.UserDetails(user);
     }
 
     public UserDTO findByTelegramId(long id){
-        com.example.authentication.security.UserDetails userDetails = (com.example.authentication.security.UserDetails) loadUserByTelegramId(id);
+        com.example.authentication.security.user.UserDetails userDetails = (com.example.authentication.security.user.UserDetails) loadUserByTelegramId(id);
 
         return convertor.convertToUserDTO(userDetails.getUser());
 

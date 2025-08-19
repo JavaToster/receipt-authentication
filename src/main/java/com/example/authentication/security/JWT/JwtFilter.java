@@ -1,8 +1,7 @@
-package com.example.authentication.filters;
+package com.example.authentication.security.JWT;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import com.example.authentication.security.JwtUtil;
 import com.example.authentication.services.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.FilterChain;

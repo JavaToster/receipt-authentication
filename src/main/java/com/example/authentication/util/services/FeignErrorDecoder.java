@@ -1,4 +1,4 @@
-package com.example.authentication.config.feign;
+package com.example.authentication.util.services;
 
 import feign.Response;
 import feign.codec.ErrorDecoder;
