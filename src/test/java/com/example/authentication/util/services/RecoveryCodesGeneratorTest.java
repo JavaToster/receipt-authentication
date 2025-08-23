@@ -1,10 +1,11 @@
-package com.example.authentication.utilServices;
+package com.example.authentication.util.services;
 
-import com.example.authentication.util.services.RecoveryCodesGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,9 +17,7 @@ class RecoveryCodesGeneratorTest {
 
     @Test
     void generate() {
-        String code = recoveryCodesGenerator.generate();
-
-        assertNotNull(code);
-        assertEquals(6, code.length());
+        int code = Integer.parseInt(recoveryCodesGenerator.generate());
+        assertTrue(100_000 <= code && 999_999 >= code);
     }
 }

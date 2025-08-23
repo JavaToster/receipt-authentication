@@ -6,7 +6,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
 @Component
-@Scope("prototype")
 public class ErrorMessageCreator {
     public String createErrorMessage(BindingResult errors){
         StringBuilder errorMessage = new StringBuilder();
