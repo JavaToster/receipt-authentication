@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 @FeignClient(name = "email-sender", url = "${clients.email-sender.url}", configuration = FeignConfiguration.class)
 public interface EmailSenderClient {
-    @PostMapping("/send_recovery_code")
+    @PostMapping("/send/recovery_code")
     void sendRecoveryCode(@RequestBody RecoveryCodeForEmailSenderDTO emailSenderDTO, @RequestHeader("Authorization-key") String authorizationKey);
 }
