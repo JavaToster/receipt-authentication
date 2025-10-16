@@ -4,7 +4,6 @@ package com.example.authentication.controllers;
 import com.example.authentication.DTO.user.UserDTO;
 import com.example.authentication.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

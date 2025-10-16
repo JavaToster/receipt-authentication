@@ -30,7 +30,7 @@ public class AuthController {
         authValidator.validate(errors);
 
         String jwt = userService.singUp(authenticationDataDTO);
-        return new ResponseEntity<>(new SuccessAuthenticationDTO(jwt), HttpStatus.OK);
+        return ResponseEntity.ok(new SuccessAuthenticationDTO(jwt));
     }
 
     @PostMapping("/sing_in")
@@ -38,7 +38,7 @@ public class AuthController {
         authValidator.validateAllFields(data);
 
         String jwt = userService.singIn(data);
-        return new ResponseEntity<>(new SuccessAuthenticationDTO(jwt), HttpStatus.OK);
+        return ResponseEntity.ok(new SuccessAuthenticationDTO(jwt));
     }
 
     @PostMapping("/forgot_password_send_recovery_code")
@@ -47,7 +47,7 @@ public class AuthController {
         String generatedCode = recoveryCodeService.addNewRecoveryCode(data.getTelegramId());
         emailService.sendRestoreCode(data.getTelegramId(), generatedCode);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/forgot_password_check_recovery_code")
@@ -55,7 +55,7 @@ public class AuthController {
         authValidator.validate(errors);
 
         recoveryCodeService.checkRecoveryCode(recoveryCodeDTO);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok().build(); 
     }
 
     @PostMapping("/forgot_password_replace_password")
@@ -65,6 +65,6 @@ public class AuthController {
         userService.replacePassword(data);
         recoveryCodeService.removeRecoveryCode(data.getTelegramId());
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok().build(); 
     }
 }
