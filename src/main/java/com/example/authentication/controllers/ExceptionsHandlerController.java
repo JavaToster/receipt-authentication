@@ -1,4 +1,4 @@
-package com.example.authentication.forExceptions;
+package com.example.authentication.controllers;
 
 import com.example.authentication.DTO.ErrorMessageDTO;
 import jakarta.persistence.EntityNotFoundException;
